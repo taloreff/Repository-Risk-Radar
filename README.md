@@ -17,28 +17,25 @@ The project is defensive-only: it focuses on vulnerability awareness, prioritiza
 
 ## Screenshots
 
-> [!NOTE]
-> For GitHub to render these images, commit the PNGs into `docs/screenshots/` using the exact filenames referenced below.
+![Scan input — dependency intelligence cockpit](docs/screenshots/1.png)
 
-1. Scan input + deterministic AI summary
+*Scan input: paste any public GitHub URL, toggle AI narrative, or load the demo scan.*
 
-   ![Scan input and deterministic AI summary](docs/screenshots/image-ea02f368-371a-4597-b90f-244f6ad57420.png)
+![AI Release Gate with developer ticket](docs/screenshots/2.png)
 
-2. AI Release Gate + developer ticket preview
+*AI Release Gate: deterministic BLOCK/WARN/PASS decision with evidence, required actions, and a ready-to-paste developer ticket.*
 
-   ![AI Release Gate preview](docs/screenshots/image-442aceab-bd92-495f-bede-98f7323fceb0.png)
+![Exploitability map and scan coverage](docs/screenshots/3.png)
 
-3. Exploitability map + OSV coverage overview
+*Exploitability map (CVSS × EPSS bubble chart) and OSV scan coverage breakdown.*
 
-   ![Exploitability map and coverage](docs/screenshots/image-84fc5146-7de3-4776-b387-d3c5464b244c.png)
+![Prioritized findings and AI remediation brief](docs/screenshots/4.png)
 
-4. Prioritized findings + remediation brief
+*Prioritized findings table ranked by risk score, alongside an AI-generated remediation plan.*
 
-   ![Prioritized findings and remediation brief](docs/screenshots/image-950de899-e5ac-4957-9a72-e97111314b72.png)
+![CVE intelligence tiles (NVD + EPSS)](docs/screenshots/5.png)
 
-5. CVE intelligence tiles (NVD + EPSS)
-
-   ![CVE intelligence tiles](docs/screenshots/image-0d9195c5-d2d5-4a83-af1c-a58d15fbf880.png)
+*CVE intelligence tiles showing NVD severity and EPSS exploitation-probability per CVE.*
 
 ## Architecture
 
