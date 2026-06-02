@@ -1,0 +1,13 @@
+.git
+.DS_Store
+.cursor
+.venv
+node_modules
+**/node_modules
+**/.next
+**/dist
+reports
+coverage
+.turbo
+.env
+

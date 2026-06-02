@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: repo-risk-radar-api
+    env: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: "4000"
+      - key: CLIENT_ORIGIN
+        value: "https://REPLACE_WITH_VERCEL_DOMAIN"
+
