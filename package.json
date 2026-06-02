@@ -1,0 +1,24 @@
+{
+  "name": "repo-risk-radar-monorepo",
+  "private": true,
+  "packageManager": "npm@10.8.2",
+  "workspaces": [
+    "apps/client",
+    "apps/server"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "agent:test": "cd apps/agent && ../../.venv/bin/python -m pytest",
+    "agent:lint": "cd apps/agent && ../../.venv/bin/python -m ruff check .",
+    "agent:self-test": "cd apps/agent && ../../.venv/bin/python -m repo_risk_radar self-test"
+  },
+  "overrides": {
+    "postcss": "^8.5.15"
+  },
+  "devDependencies": {
+    "turbo": "^2.6.3"
+  }
+}

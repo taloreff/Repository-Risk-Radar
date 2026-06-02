@@ -1,0 +1,13 @@
+---
+description: Repo-wide architecture and maintainability rules
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+- Keep files and functions small; avoid huge components and broad utility modules.
+- Separate UI, API boundaries, deterministic security logic, and OpenAI narrative generation.
+- Keep API payloads typed and stable.
+- Never expose secrets to the frontend or commit `.env`.
+- Ask before adding new production dependencies.
+- Run available lint, build, and tests after changes.

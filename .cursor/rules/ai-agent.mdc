@@ -1,0 +1,13 @@
+---
+description: AI agent and deterministic security scanner rules
+globs:
+  - "apps/agent/**/*"
+alwaysApply: false
+---
+
+- Deterministic scanner services own facts, enrichment, scoring, and release decisions.
+- OpenAI only explains structured data and formats remediation text.
+- AI must not invent CVEs, versions, fixed versions, evidence, or release decisions.
+- Include unknowns when enrichment or exact version data is incomplete.
+- Keep behavior defensive only; no exploit code or offensive instructions.
+- Unit tests must not call OpenAI or external networks.

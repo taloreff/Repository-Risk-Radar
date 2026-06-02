@@ -1,0 +1,12 @@
+---
+description: Code review checklist for Repo Risk Radar
+globs:
+  - "**/*"
+alwaysApply: false
+---
+
+- Flag oversized components, mixed business/UI logic, duplicated formatters, and weak typing.
+- Check that deterministic security decisions remain outside OpenAI prompts.
+- Check that frontend code never reads server-only secrets.
+- Check that public website behavior does not execute repo code or provide offensive guidance.
+- Check that deterministic logic has tests and commands were run.

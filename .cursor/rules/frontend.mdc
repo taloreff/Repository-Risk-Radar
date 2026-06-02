@@ -1,0 +1,15 @@
+---
+description: Frontend rules for the Next.js client
+globs:
+  - "apps/client/**/*"
+alwaysApply: false
+---
+
+- Keep components ideally under about 100 lines.
+- Keep one React component per file, with the exported component name matching the filename.
+- Move secondary UI pieces into their own component files and pure helpers into utilities.
+- Split scan result screens into feature components and pure utilities.
+- Keep API calls in services/hooks.
+- Use typed props and imported API payload types.
+- Extract risk formatting, severity styles, and chart mapping from UI components.
+- Preserve visual behavior unless a UI change is requested.

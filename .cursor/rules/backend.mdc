@@ -1,0 +1,12 @@
+---
+description: Backend rules for the NestJS server
+globs:
+  - "apps/server/**/*"
+alwaysApply: false
+---
+
+- Keep controllers thin.
+- Put process execution, caching, and API integration logic in services.
+- Validate inputs and return safe client-facing errors.
+- Never leak secrets, stack traces, or filesystem details.
+- Do not duplicate deterministic release policy in the server.
