@@ -1,7 +1,5 @@
 # Repo Risk Radar
 
-![Repo Risk Radar icon](apps/client/src/app/icon.svg)
-
 Repo Risk Radar is a defensive fullstack dependency-risk scanner for public GitHub repositories. It checks dependencies with exact version matches against OSV, enriches CVE data with NVD + EPSS, and generates a deterministic release gate and developer-ready remediation plan.
 
 The project is defensive-only: it focuses on vulnerability awareness, prioritization, and remediation. It does not generate exploit code, attack payloads, or offensive instructions.
@@ -41,17 +39,17 @@ The project is defensive-only: it focuses on vulnerability awareness, prioritiza
 
 ```mermaid
 flowchart LR
-  U[User] -->|Paste public GitHub repo URL| C[Web client (Next.js)]
-  C -->|POST /api/scans| S[Server (NestJS)]
-  S -->|spawn Python process| A[Agent (Python CLI)]
-  A -->|OSV queries| O[OSV.dev]
-  A -->|Enrich| N[NVD]
-  A -->|Enrich| E[EPSS]
-  A -->|Rank + policy| P[Risk ranker + Release gate policy]
-  P -->|Structured scan JSON| A
-  A -->|stdout JSON| S
-  S -->|scan JSON| C
-  C --> R[Remediation dashboard]
+  U["User"] -->|"Paste public GitHub repo URL"| C["Web client (Next.js)"]
+  C -->|"POST /api/scans"| S["Server (NestJS)"]
+  S -->|"Spawn Python process"| A["Agent (Python CLI)"]
+  A -->|"OSV queries"| D["OSV.dev"]
+  A -->|"Enrich"| N["NVD"]
+  A -->|"Enrich"| E["EPSS"]
+  A -->|"Rank + policy"| P["Risk ranker + release gate policy"]
+  P -->|"Structured scan JSON"| A
+  A -->|"stdout JSON"| S
+  S -->|"scan JSON"| C
+  C --> R["Remediation dashboard"]
 ```
 
 ## Safety Model
@@ -110,18 +108,12 @@ NEXT_PUBLIC_API_BASE_URL=http://localhost:4000/api
 CLIENT_ORIGIN=http://localhost:3000
 PORT=4000
 
-# Optional: force server to use a specific Python interpreter
-AGENT_PYTHON=
-
 # Cache scan results on the server
 SCAN_CACHE_TTL_SECONDS=900
 ```
 
 - `OPENAI_API_KEY` is optional. If missing, the agent uses deterministic output without OpenAI narrative.
 - `GITHUB_TOKEN` and `NVD_API_KEY` are optional but improve rate limits and enrichment completeness.
-
-> [!NOTE]
-> Do **not** commit `.env` (the root `.gitignore` excludes it).
 
 ## Run Locally
 
